@@ -1,0 +1,9 @@
+#include "linenumberarea.h"
+
+LineNumberArea::LineNumberArea()
+{
+    public:
+    protected:
+    private:
+
+}
