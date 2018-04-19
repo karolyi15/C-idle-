@@ -5,7 +5,9 @@
 #include <QLayout>
 #include <QRect>
 #include <QTableWidget>
-
+#include <QPushButton>
+#include <QToolBar>
+#include <botoncp.h>
 
 //***************************************BORDER LAYOUT****************************************//
 //********************************************************************************************//
@@ -65,7 +67,14 @@ private:
     QPlainTextEdit *Stdout;
     QTableWidget *Log;
     syntaxHightlight *syntax;
+    QToolBar *button;
+    QPushButton *b;
+    botoncp *boton;
 
+
+
+public slots:
+    void test();
 };
 
 

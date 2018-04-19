@@ -32,7 +32,8 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     textEditor.h \
-    mserver.h
+    mserver.h \
+    botoncp.h
 
 FORMS += \
         mainwindow.ui

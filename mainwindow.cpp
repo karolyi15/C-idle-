@@ -10,12 +10,14 @@ MainWindow::MainWindow(){
     //****************************OBJECTS INITIALIZED*****************************//
 
     setup();
+    boton = new botoncp(this->Stdout);
 
     //*********************************ADD OBJECTS********************************//
 
     layout->addWidget(textEditor,BorderLayout::Center);
     layout->addWidget(Stdout,BorderLayout::South);
     layout->addWidget(Log,BorderLayout::East);
+    layout->addWidget(boton->pButton ,BorderLayout::North);
 
 
     //*******************************SET LAYOUT/SHOW*****************************//
@@ -38,7 +40,18 @@ void MainWindow::setup(){
     Log->setColumnCount(4);
     Log->setHorizontalHeaderLabels(QString("Memory;Value;Label;Counter").split(";"));
 
+    button=new QToolBar();
 
+    /*button->addAction("&File");
+    button->actions()[0]->trigger();
+    button->addAction("&Run");
+    button->addAction("&Debug Mode");
+    button->addAction("&Info");*/
+
+}
+
+void MainWindow::test(){
+    Stdout->appendPlainText("Mission complete!!");
 }
 
 //***************************************BORDER LAYOUT****************************************//
