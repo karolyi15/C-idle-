@@ -34,8 +34,8 @@ void MainWindow::setup(){
     Stdout=new QPlainTextEdit();
     ram=new QPlainTextEdit();
     toolBar=new QToolBar();
-    runButton = new botoncp(this->Stdout,"Run");
-    debugButton=new botoncp(this->Stdout,"Debug");
+    runButton = new botoncp(this->Stdout,this->textEditor,"Run");
+    debugButton=new botoncp(this->Stdout,this->textEditor,"Debug");
 
 
     toolBar->addWidget(runButton->pButton);
