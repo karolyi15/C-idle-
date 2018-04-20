@@ -10,14 +10,14 @@ MainWindow::MainWindow(){
     //****************************OBJECTS INITIALIZED*****************************//
 
     setup();
-    boton = new botoncp(this->Stdout);
+
 
     //*********************************ADD OBJECTS********************************//
 
     layout->addWidget(textEditor,BorderLayout::Center);
     layout->addWidget(Stdout,BorderLayout::South);
-    layout->addWidget(Log,BorderLayout::East);
-    layout->addWidget(boton->pButton ,BorderLayout::North);
+    layout->addWidget(ram,BorderLayout::East);
+    layout->addWidget(toolBar,BorderLayout::North);
 
 
     //*******************************SET LAYOUT/SHOW*****************************//
@@ -32,30 +32,23 @@ void MainWindow::setup(){
     textEditor=new CodeEditor();
     syntax=new syntaxHightlight(textEditor->document());    
     Stdout=new QPlainTextEdit();
-    Log=new QTableWidget();
+    ram=new QPlainTextEdit();
+    toolBar=new QToolBar();
+    runButton = new botoncp(this->Stdout,"Run");
+    debugButton=new botoncp(this->Stdout,"Debug");
 
-    Stdout->appendPlainText(">>mainwindow::Stdout \n");
 
-    Log->setRowCount(40); //set number of items
-    Log->setColumnCount(4);
-    Log->setHorizontalHeaderLabels(QString("Memory;Value;Label;Counter").split(";"));
-
-    button=new QToolBar();
-
-    /*button->addAction("&File");
-    button->actions()[0]->trigger();
-    button->addAction("&Run");
-    button->addAction("&Debug Mode");
-    button->addAction("&Info");*/
+    toolBar->addWidget(runButton->pButton);
+    toolBar->addWidget(debugButton->pButton);
+    Stdout->appendPlainText(">>mainwindow::Stdout \n>>C! Idle initialized...");
+    ram->appendPlainText("                   RAM LIVE VIEW    ");
+    ram->appendPlainText("_________________________________");
 
 }
 
-void MainWindow::test(){
-    Stdout->appendPlainText("Mission complete!!");
-}
 
-//***************************************BORDER LAYOUT****************************************//
-//********************************************************************************************//
+//***************************************BORDER LAYOUT******************************************//
+//**********************************************************************************************//
 
 BorderLayout::BorderLayout(QWidget *parent, int margin, int spacing)
       : QLayout(parent)

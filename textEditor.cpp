@@ -4,6 +4,7 @@
 //*******************************************************//
 
 CodeEditor::CodeEditor(QWidget *parent):QPlainTextEdit(parent){
+
     lineNumberArea= new LineNumberArea(this);
     connect(this,SIGNAL(blockCountChanged(int)),this,SLOT(updateLineNumberAreaWidth(int)));
     connect(this,SIGNAL(updateRequest(QRect,int)),this,SLOT(updateLineNumberArea(QRect,int)));
@@ -101,16 +102,14 @@ syntaxHightlight::syntaxHightlight(QTextDocument *parent)
     keywordFormat.setForeground(Qt::darkBlue);
     keywordFormat.setFontWeight(QFont::Bold);
     QStringList keywordPatterns;
-    keywordPatterns << "\\bchar\\b" << "\\bclass\\b" << "\\bconst\\b"
-                    << "\\bdouble\\b" << "\\benum\\b" << "\\bexplicit\\b"
-                    << "\\bfriend\\b" << "\\binline\\b" << "\\bint\\b"
+    keywordPatterns << "\\bchar\\b"  << "\\bint\\b"
+                    << "\\bdouble\\b"  << "\\bfloat\\b"
                     << "\\blong\\b" << "\\bnamespace\\b" << "\\boperator\\b"
                     << "\\bprivate\\b" << "\\bprotected\\b" << "\\bpublic\\b"
-                    << "\\bshort\\b" << "\\bsignals\\b" << "\\bsigned\\b"
-                    << "\\bslots\\b" << "\\bstatic\\b" << "\\bstruct\\b"
-                    << "\\btemplate\\b" << "\\btypedef\\b" << "\\btypename\\b"
-                    << "\\bunion\\b" << "\\bunsigned\\b" << "\\bvirtual\\b"
-                    << "\\bvoid\\b" << "\\bvolatile\\b" << "\\bbool\\b";
+                    << "\\bshort\\b" << "\\bstatic\\b" << "\\bstruct\\b"
+                    << "\\bvoid\\b"  << "\\bbool\\b"
+                    << "\\bprint\\b" << "\\bstring\\b";
+
     foreach (const QString &pattern, keywordPatterns) {
         rule.pattern = QRegularExpression(pattern);
         rule.format = keywordFormat;

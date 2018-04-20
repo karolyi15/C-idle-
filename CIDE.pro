@@ -26,13 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    textEditor.cpp \
-    mserver.cpp
+    textEditor.cpp
 
 HEADERS += \
         mainwindow.h \
     textEditor.h \
-    mserver.h \
     botoncp.h
 
 FORMS += \

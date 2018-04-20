@@ -65,16 +65,11 @@ private:
     BorderLayout *layout=new BorderLayout;
     CodeEditor *textEditor;
     QPlainTextEdit *Stdout;
-    QTableWidget *Log;
+    QPlainTextEdit *ram;
     syntaxHightlight *syntax;
-    QToolBar *button;
-    QPushButton *b;
-    botoncp *boton;
-
-
-
-public slots:
-    void test();
+    QToolBar *toolBar;
+    botoncp *runButton;
+    botoncp *debugButton;
 };
 
 
